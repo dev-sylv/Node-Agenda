@@ -31,3 +31,7 @@ With Node Agenda, you can easily create jobs that run once, on a recurring sched
 Node Agenda uses MongoDB as its underlying data store, so you'll need to have MongoDB installed and running in order to use it. Once you've installed Node Agenda and set up your MongoDB connection, you can start defining and scheduling jobs using the simple and intuitive API.
 
 Here's an example of how you might use Node Agenda to schedule a job to run every day at midnight:
+
+We define the job with the define method, schedule the job with the every method, and start the agenda with the start method.
+
+Note that we also wrap the start method call in an async function and use the await keyword to ensure that the agenda is fully started before logging a message to the console. This is because the start method returns a Promise that resolves when the agenda is ready to run jobs.
