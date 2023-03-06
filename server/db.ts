@@ -5,7 +5,7 @@ import Agenda from "agenda";
 
 const agendastring = "mongodb://localhost/AgendaTutorial"
 
-const agenda = new Agenda({db: { address: agendastring }})
+export const agenda = new Agenda({db: { address: agendastring }})
 
 export const DBconnect = async() =>{
     try {
