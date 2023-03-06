@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 import Agenda from "agenda";
 
-
 const agendastring = "mongodb://localhost/AgendaTutorial"
 
 export const agenda = new Agenda({db: { address: agendastring }})
