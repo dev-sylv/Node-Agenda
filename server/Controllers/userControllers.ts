@@ -33,7 +33,7 @@ export const  WelcomeMail = async(req: Request, res: Response) =>{
     
     // Create an email message:
     const MailMessage = {
-        from: "nicsylvia15f@gmail.com",
+        from: environmentVariables.adminemail,
         to: email,
         subject: "Welcome to my platform",
         text: `${user!.name},Thank you for signing up for our site. We look forward to having you as a member!`
@@ -42,9 +42,16 @@ export const  WelcomeMail = async(req: Request, res: Response) =>{
     // Send the mail:
     SendWelcomeMail.sendMail(MailMessage, function(error, info){
         if (error) {
-            console.log(error)
-        } else {
-            console.log("Emil sent to: " + info.response)
+            console.log("")
+            console.log(error);
+            res.status(500).send('Internal server error');
+          } else {
+            console.log('Email sent: ' + info.response);
+            // return res.status(200).json({
+            //     message: "User registered successfully, Email sent successfully",
+            //     data: user
+            // })
+            res.status(200).send('Email sent successfully');
         }
     })
  } catch (error) {
@@ -59,31 +66,3 @@ export const  WelcomeMail = async(req: Request, res: Response) =>{
 
 
 // Register a user and send them welcome emails:
-export const UserRegistration = async(req: Request, res: Response): Promise<Response> =>{
-    try {
-        const { name, email, password } = req.body;
-
-            const user = await userModels.create({
-                name,
-                email,
-                password
-            })
-
-            // agenda.define("Send welcome email", function(job: any, done: any){
-            //     WelcomeMail(job.attrs.data);
-            // })
-
-            // agenda.schedule("in 2 minutes", "Send welcome email", { user: user})
-
-            return res.status(200).json({
-                message: "User registered successfully",
-                data: user
-            })
-        
-    } catch (error) {
-        return res.status(400).json({
-            message: "An error occured",
-            data: error
-        })
-    }
-}
