@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+import agenda from "agenda";
+
 const agendastring = "mongodb://localhost/AgendaTutorial"
 
 export const DBconnect = async() =>{

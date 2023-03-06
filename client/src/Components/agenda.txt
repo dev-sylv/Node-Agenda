@@ -15,3 +15,9 @@ What sets Agenda.js apart? Agenda uses MongoDB for persistence, which offers the
 The Redis option doesn’t behave as expected in the case of a server crash or restart and requires some special configuration on the database.
 
 Agenda.js is both lightweight and robust in terms of its feature set. 
+
+When using Agenda.js, you’re likely to use the following methods regularly:
+
+. agenda.every repeats a task at a specified interval — e.g., monthly, weekly, daily, etc.
+. agenda.schedule schedules a task to run once at a specific time
+. agenda.now schedules a task to run immediately
