@@ -1,11 +1,12 @@
 import nodemailer from "nodemailer"
+import {environmentVariables} from "../Config/environmentVariables"
 
 // Create a transporter
 export const SendWelcomeMail = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: 'nicsylvia15f@gmail.com',
-        pass: ''
+        user: environmentVariables.adminemail,
+        pass: environmentVariables.adminpassword
     }
 });
 
