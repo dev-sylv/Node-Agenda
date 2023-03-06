@@ -21,3 +21,13 @@ When using Agenda.js, you’re likely to use the following methods regularly:
 . agenda.every repeats a task at a specified interval — e.g., monthly, weekly, daily, etc.
 . agenda.schedule schedules a task to run once at a specific time
 . agenda.now schedules a task to run immediately
+
+FROM CHAT GPT:
+
+Node Agenda is a job scheduling library for Node.js applications. It allows you to define jobs to be run at specific times or intervals, and provides a flexible and powerful API for managing those jobs.
+
+With Node Agenda, you can easily create jobs that run once, on a recurring schedule, or in response to external events. You can also define job dependencies, run jobs in parallel or sequentially, and specify custom data and options for each job.
+
+Node Agenda uses MongoDB as its underlying data store, so you'll need to have MongoDB installed and running in order to use it. Once you've installed Node Agenda and set up your MongoDB connection, you can start defining and scheduling jobs using the simple and intuitive API.
+
+Here's an example of how you might use Node Agenda to schedule a job to run every day at midnight:
