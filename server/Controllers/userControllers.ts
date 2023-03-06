@@ -1,7 +1,9 @@
 import { Job } from "agenda";
 import { Request, Response } from "express";
 
-import { agenda } from "../db";
+import { agenda } from "../Config/db";
+
+import moment from ""
 
 import userModels from "../Models/usermodels";
 
@@ -12,6 +14,7 @@ export const UserRegistration = async(req: Request, res: Response): Promise<Resp
 
         // Define the job
         agenda.define("Welcome all users with an email", async(Job) =>{
+            
             const user = await userModels.create({
                 name,
                 email,
@@ -24,7 +27,8 @@ export const UserRegistration = async(req: Request, res: Response): Promise<Resp
         })
 
         // schedule the job to run every day at midnight
-        const Timezone = "Nigeria/Lagos"
+        const Timezone = "Nigeria/Lagos",
+        const StartTime = momen
 
         
     } catch (error) {

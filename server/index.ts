@@ -1,7 +1,7 @@
 import express, { Application, Request, Response} from "express";
 
 import cors from "cors";
-import { DBconnect } from "./db";
+import { DBconnect } from "./Config/db";
 
 const port: number = 4000;
 
