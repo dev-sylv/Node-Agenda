@@ -10,8 +10,8 @@ import userModels from "../Models/usermodels";
 
 
 // Welcome mail for all users:
-function WelcomeMail(Job, done){
-    
+export function WelcomeMail(Job, done){
+
  const SendWelcomeMail = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -25,7 +25,7 @@ let recipentEmail = "recipient@gmail.com"
 // Create an email message:
 const MailMessage = {
     from: "nicsylvia15f@gmail.com",
-    to: recipentEmail,
+    to: "adimikesylvia@gmail.com",
     subject: "Welcome to my platform",
     text: 'Thank you for signing up for our site. We look forward to having you as a member!'
 };
@@ -38,6 +38,8 @@ SendWelcomeMail.sendMail(MailMessage, function(error, info){
         console.log("Emil sent to: " + info.response)
     }
 })
+
+done();
 }
 
 
@@ -51,6 +53,13 @@ export const UserRegistration = async(req: Request, res: Response): Promise<Resp
                 email,
                 password
             })
+
+            agenda.define("Send welcome email", function(job, done){
+                WelcomeMail(job.attrs.data, done);
+            })
+
+            agenda.schedule("in 2 minutes", "Send welcome email", { user: user})
+
             return res.status(200).json({
                 message: "User registered successfully",
                 data: user
