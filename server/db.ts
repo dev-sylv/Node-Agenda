@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 
 import Agenda from "agenda";
 
-// const agenda = new Agenda({ agendastring: {address: "mongodb://localhost/AgendaTutorial"}})
 
 const agendastring = "mongodb://localhost/AgendaTutorial"
+
+const agenda = new Agenda({db: { address: agendastring }})
 
 export const DBconnect = async() =>{
     try {
