@@ -10,34 +10,49 @@ import userModels from "../Models/usermodels";
 
 
 // Welcome mail for all users:
-export const  WelcomeMail = async() =>{
+export const  WelcomeMail = async(req: Request, res: Response) =>{
 
- const SendWelcomeMail = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: environmentVariables.adminemail,
-        pass: environmentVariables.adminpassword
-    }
-});
+ try {
 
-let recipentEmail = "recipient@gmail.com"
+    const { name, email, password } = req.body;
 
-// Create an email message:
-const MailMessage = {
-    from: "nicsylvia15f@gmail.com",
-    to: "bootcamprealestate4codelab@gmail.com",
-    subject: "Welcome to my platform",
-    text: 'Thank you for signing up for our site. We look forward to having you as a member!'
-};
-
-// Send the mail:
-SendWelcomeMail.sendMail(MailMessage, function(error, info){
-    if (error) {
-        console.log(error)
-    } else {
-        console.log("Emil sent to: " + info.response)
-    }
-})
+    // Creating a transporter for our email
+    const SendWelcomeMail = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: environmentVariables.adminemail,
+            pass: environmentVariables.adminpassword
+        }
+    });
+    
+    const user = await userModels.create({
+        name,
+        email,
+        password
+    })
+    
+    // Create an email message:
+    const MailMessage = {
+        from: "nicsylvia15f@gmail.com",
+        to: email,
+        subject: "Welcome to my platform",
+        text: `${user!.name},Thank you for signing up for our site. We look forward to having you as a member!`
+    };
+    
+    // Send the mail:
+    SendWelcomeMail.sendMail(MailMessage, function(error, info){
+        if (error) {
+            console.log(error)
+        } else {
+            console.log("Emil sent to: " + info.response)
+        }
+    })
+ } catch (error) {
+        return res.status(400).json({
+            message: "An error occured",
+            data: error
+        })
+ }
 
 
 }
