@@ -3,8 +3,6 @@ import { Request, Response } from "express";
 
 import { agenda } from "../Config/db";
 
-import moment from ""
-
 import userModels from "../Models/usermodels";
 
 // Register a user and send them welcome emails:
@@ -12,9 +10,6 @@ export const UserRegistration = async(req: Request, res: Response): Promise<Resp
     try {
         const { name, email, password } = req.body;
 
-        // Define the job
-        agenda.define("Welcome all users with an email", async(Job) =>{
-            
             const user = await userModels.create({
                 name,
                 email,
@@ -24,12 +19,6 @@ export const UserRegistration = async(req: Request, res: Response): Promise<Resp
                 message: "User registered successfully",
                 data: user
             })
-        })
-
-        // schedule the job to run every day at midnight
-        const Timezone = "Nigeria/Lagos",
-        const StartTime = momen
-
         
     } catch (error) {
         return res.status(400).json({
