@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-import agenda from "agenda";
+import Agenda from "agenda";
+
+// const agenda = new Agenda({ agendastring: {address: "mongodb://localhost/AgendaTutorial"}})
 
 const agendastring = "mongodb://localhost/AgendaTutorial"
 
