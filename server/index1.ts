@@ -1,51 +1,34 @@
-import Agenda, { JobPriority } from "agenda"
-import nodemailer from "nodemailer"
-import express, { Application} from "express"
+// Import dependencies
+import { Agenda } from 'agenda';
 
-const port = 2000
+// Create a new instance of Agenda
+const agenda = new Agenda({ db: { address: 'mongodb://localhost/agenda-example' } });
 
-const agenda = new Agenda({
-  db: {
-    address: 'mongodb://localhost/agenda',
-    collection: 'jobs',
-  },
-});
-
-async function start() {
-  await agenda.start();
-
-  agenda.define('send welcome email', { priority: JobPriority.high }, async (job: any) => {
-    const { email, name } = job.attrs.data;
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      auth: {
-        user: 'your-email@example.com',
-        pass: 'your-email-password',
-      },
-    });
-
-    const info = await transporter.sendMail({
-      from: 'your-email@example.com',
-      to: email,
-      subject: 'Welcome to My Platform',
-      text: `Hi ${name}, welcome to our platform!`,
-    });
-
-    console.log(`Sent welcome email to ${email}: ${info.messageId}`);
-  });
-
-  // Schedule a welcome email to be sent one minute from now
-  agenda.schedule('in 1 minute', 'send welcome email', {
-    email: 'user@example.com',
-    name: 'John',
-  });
+// Define the job processing function
+async function task() {
+  console.log('Running recurring task.');
 }
 
-start();
+// Define the job name
+const jobName = 'run task';
 
-const app: Application = express();
+// Define the job schedule
+const jobSchedule = 'every 30 seconds';
 
-app.listen(port, ()=>{
-    console.log("Server created")
-})
+// Define the job options
+const jobOptions = {
+  priority: 'high',
+  concurrency: 10,
+};
+
+// Define the job
+const job = agenda.create(jobName).repeatEvery(jobSchedule, jobOptions);
+
+// Define the job processing function
+job.process(task);
+
+// Start the Agenda scheduler
+(async function() {
+  await agenda.start();
+  console.log('Agenda scheduler started.');
+})();
