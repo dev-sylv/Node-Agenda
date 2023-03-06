@@ -9,6 +9,10 @@ export const SendWelcomeMail = nodemailer.createTransport({
     }
 });
 
+// The createTransport method creates a transporter object that can be used to send emails. We pass in our email provider's details in the auth object.
+
+// The sendMail method sends the email message defined in the message object. If the email is successfully sent, the info object will contain information about the sent email, including the message ID. If there's an error, the error object will contain information about the error.
+
 // Create an email message:
 const MailMessage = {
     from: "nicsylvia15f@gmail.com",
