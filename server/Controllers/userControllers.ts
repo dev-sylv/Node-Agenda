@@ -19,6 +19,8 @@ export const  WelcomeMail = async(req: Request, res: Response) =>{
     // Creating a transporter for our email
     const SendWelcomeMail = nodemailer.createTransport({
         service: "gmail",
+        secure: true,
+        port: 465,
         auth: {
             user: environmentVariables.adminemail,
             pass: environmentVariables.adminpassword
