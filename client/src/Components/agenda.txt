@@ -2,3 +2,7 @@ Agenda's basic control structure is an instance of an agenda. Agenda's are mappe
 
 Agenda uses Human Interval for specifying the intervals. It supports the following units:
 seconds, minutes, hours, days,weeks, months -- assumes 30 days, years -- assumes 365 days
+
+Often when developing an application, there will be need to perform a recurring task or to remind a user of a particular event. This can range from sending the user billing information for a service once a month to performing database backups. It can even be as simple as sending the user an email to remind them of new offers and promotions.
+
+A simple approach would be to use the built-in methods in JavaScript, which are setTimeout and setInterval. However, this doesn’t scale horizontally because there is no way to keep track of jobs that have been completed or aborted, hence the need for a job scheduler.
