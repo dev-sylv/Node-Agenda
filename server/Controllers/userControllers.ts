@@ -25,7 +25,7 @@ let recipentEmail = "recipient@gmail.com"
 // Create an email message:
 const MailMessage = {
     from: "nicsylvia15f@gmail.com",
-    to: "adimikesylvia@gmail.com",
+    to: "bootcamprealestate4codelab@gmail.com",
     subject: "Welcome to my platform",
     text: 'Thank you for signing up for our site. We look forward to having you as a member!'
 };
