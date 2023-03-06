@@ -6,3 +6,12 @@ seconds, minutes, hours, days,weeks, months -- assumes 30 days, years -- assumes
 Often when developing an application, there will be need to perform a recurring task or to remind a user of a particular event. This can range from sending the user billing information for a service once a month to performing database backups. It can even be as simple as sending the user an email to remind them of new offers and promotions.
 
 A simple approach would be to use the built-in methods in JavaScript, which are setTimeout and setInterval. However, this doesn’t scale horizontally because there is no way to keep track of jobs that have been completed or aborted, hence the need for a job scheduler.
+
+We’ll show you how to do job scheduling in Node.js using Agenda.js.
+
+Why Agenda.js?:
+What sets Agenda.js apart? Agenda uses MongoDB for persistence, which offers the advantage of less configuration when compared to the Redis option used by most schedulers.
+
+The Redis option doesn’t behave as expected in the case of a server crash or restart and requires some special configuration on the database.
+
+Agenda.js is both lightweight and robust in terms of its feature set. 
