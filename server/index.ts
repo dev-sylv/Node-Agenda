@@ -2,6 +2,7 @@ import express, { Application, Request, Response} from "express";
 
 import cors from "cors";
 import { DBconnect } from "./Config/db";
+import router from "./Routes/userroutes";
 
 const port: number = 4000;
 
@@ -10,6 +11,8 @@ DBconnect()
 
 app.use(express.json());
 app.use(cors());
+
+app.use("/api", router)
 
 app.listen(port, () =>{
     console.log("")
