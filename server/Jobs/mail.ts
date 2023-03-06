@@ -4,8 +4,8 @@ import nodemailer from "nodemailer"
 export const SendWelcomeMail = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: 'your_gmail_account@gmail.com',
-        pass: 'your_gmail_password'
+        user: 'nicsylvia15f@gmail.com',
+        pass: ''
     }
 });
 
@@ -13,10 +13,12 @@ export const SendWelcomeMail = nodemailer.createTransport({
 
 // The sendMail method sends the email message defined in the message object. If the email is successfully sent, the info object will contain information about the sent email, including the message ID. If there's an error, the error object will contain information about the error.
 
+let recipentEmail = "recipient@gmail.com"
+
 // Create an email message:
 const MailMessage = {
     from: "nicsylvia15f@gmail.com",
-    to: "recipient@gmail.com",
+    to: recipentEmail,
     subject: "Welcome to my platform",
     text: 'Thank you for signing up for our site. We look forward to having you as a member!'
 };
