@@ -6,6 +6,12 @@ const agendastring = "mongodb://localhost/AgendaTutorial"
 
 export const agenda = new Agenda({db: { address: agendastring }})
 
+agenda.on("ready", () =>{
+    console.log("Agenda is connected to db")
+}).on("error", () =>{
+    console.log("Agenda connection error")
+})
+
 export const DBconnect = async() =>{
     try {
         const connectstring = await mongoose.connect(agendastring);
