@@ -15,5 +15,21 @@ agenda.define('log hello medium', async job => {
 (async function() {
     await agenda.start(); // Start Agenda instance
 
-    await agenda.schedule('in 10 minutes', 'log hello medium', {name: 'Medium'}); // Run the dummy job in 10 minutes and passing data.
+    await agenda.schedule('in 1 minutes', 'log hello medium', {name: 'Medium'}); // Run the dummy job in 10 minutes and passing data.
+})();
+
+// Recurring job:
+agenda.define('happy new year', async job => {
+    const year = new Date().getFullYear();
+    console.log(`Happy new year ${year} 🎉`);
+
+    /**
+     * Replace the dummy log and write your code here
+     */
+});
+
+(async function() {
+    await agenda.start(); // Start Agenda instance
+
+    await agenda.every('0 0 1 1 *', 'happy new year');
 })();
