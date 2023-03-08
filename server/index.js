@@ -1,13 +1,14 @@
 const express = require("express")
 
-import cors from "cors";
-import { DBconnect } from "./Config/db";
+const cors = require("cors")
+
+import { agenda } from "./Config/db";
 import router from "./Routes/userroutes";
 
 const port = 4000;
 
 const app = express();
-DBconnect()
+agenda()
 
 app.use(express.json());
 app.use(cors());

@@ -5,7 +5,13 @@ const Agenda = require("agenda")
 
 const agendastring = "mongodb://localhost/AgendaTutorial"
 
-export const agenda = new Agenda({db: { address: agendastring }})
+export const agenda = new Agenda({
+    db: {address: agendastring, collection: 'Agenda'},
+    processEvery: '20 seconds',
+    useUnifiedTopology: true
+});
+
+// export const agenda = new Agenda({db: { address: agendastring }})
 
 agenda.on("ready", () =>{
     console.log("Agenda is connected to db")
@@ -13,11 +19,11 @@ agenda.on("ready", () =>{
     console.log("Agenda connection error")
 })
 
-export const DBconnect = async() =>{
-    try {
-        const connectstring = await mongoose.connect(agendastring);
-        console.log(`DB is connected to ${connectstring.connection.host}`)
-    } catch (error) {
-        console.log(`An error occured in connecting DB to ${agendastring} `)
-    }
-}
+// export const DBconnect = async() =>{
+//     try {
+//         const connectstring = await mongoose.connect(agendastring);
+//         console.log(`DB is connected to ${connectstring.connection.host}`)
+//     } catch (error) {
+//         console.log(`An error occured in connecting DB to ${agendastring} `)
+//     }
+// }
