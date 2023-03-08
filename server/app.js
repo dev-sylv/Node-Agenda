@@ -20,7 +20,7 @@ agenda.define('log hello medium', async job => {
 
 // Recurring job: Agenda allows us to run recurring jobs. For example every year. We will create a dummy job to wish a happy new year
 agenda.define('happy new year', async job => {
-    const year = new Date().getFullYear();
+    const year = new Date().getMinutes;
     console.log(`Happy new year ${year} 🎉`);
 
     /**
