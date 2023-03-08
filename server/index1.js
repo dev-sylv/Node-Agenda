@@ -1,5 +1,5 @@
 // Import dependencies
-import { Agenda } from 'agenda';
+const Agenda = require("agenda")
 
 // Create a new instance of Agenda
 const agenda = new Agenda({ db: { address: 'mongodb://localhost/agenda-example' } });
