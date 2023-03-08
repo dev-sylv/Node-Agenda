@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose")
 
-import Agenda from "agenda";
+const Agenda = require("agenda")
+
 
 const agendastring = "mongodb://localhost/AgendaTutorial"
 

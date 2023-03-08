@@ -1,4 +1,4 @@
-import express, { Application, Request, Response} from "express";
+const express = require("express")
 
 import cors from "cors";
 import { DBconnect } from "./Config/db";
