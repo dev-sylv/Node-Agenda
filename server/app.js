@@ -31,7 +31,7 @@ agenda.define('happy new year', async job => {
 (async function() {
     await agenda.start(); // Start Agenda instance
 
-    await agenda.every('0 0 1 1 *', 'happy new year');
+    await agenda.every('1 1 0 0 *', 'happy new year');
 })();
 
 // Agenda helps you to plan jobs, run them later or repeatedly. You can find more information and features here.
