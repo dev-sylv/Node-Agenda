@@ -9,9 +9,6 @@ const transporter = require("../Config/mailer")
 
 // import { environmentVariables } from "../Config/environmentVariables";
 
-// import nodemailer from "nodemailer"
-
-const nodemailer = require("nodemailer")
 
 // import userModels from "../Models/usermodels";
 
