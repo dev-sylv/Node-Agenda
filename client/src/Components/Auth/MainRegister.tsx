@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../Assets/property.png";
-import house from "../Assets/sylvia7.jpg";
+import logo from "../Assets/house-removebg-preview.png";
+import bgauth from "../Assets/housebg-removebg-preview.png";
 import { BsArrowRightShort } from "react-icons/bs";
 
 const MainRegister = () => {
@@ -12,7 +12,6 @@ const MainRegister = () => {
           <MyLogo src={logo} />
         </Logo>
         <MainAuth>
-          <BgImage></BgImage>
           <Wrap>
             <h2>Sign Up</h2>
             <AuthBox>
@@ -53,7 +52,7 @@ export default MainRegister;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  /* background-color: #00000090; */
+  background-color: #00afff;
   display: flex;
   flex-direction: column;
 `;
@@ -75,23 +74,18 @@ const MainAuth = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const BgImage = styled.div`
-  background-color: cyan;
-  width: 30%;
-  height: 100%;
-  background-image: url(${house});
-  background-repeat: no-repeat;
-  /* background-size: 15%; */
-  background-position: center;
-`;
 const Wrap = styled.div`
   /* background-color: green; */
-  width: 40%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-image: url(${bgauth});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 100% top -55%;
 `;
 const AuthBox = styled.div`
   width: 500px;
