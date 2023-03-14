@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../Assets/relogo.webp";
+import logo from "../Assets/property.png";
 import house from "../Assets/sylvia7.jpg";
 import { BsArrowRightShort } from "react-icons/bs";
 
@@ -76,13 +76,13 @@ const MainAuth = styled.div`
   justify-content: center;
 `;
 const BgImage = styled.div`
-  /* background-color: cyan; */
+  background-color: cyan;
   width: 30%;
   height: 100%;
   background-image: url(${house});
   background-repeat: no-repeat;
   /* background-size: 15%; */
-  background-position: right -7.5% top -1%;
+  background-position: center;
 `;
 const Wrap = styled.div`
   /* background-color: green; */
@@ -94,20 +94,21 @@ const Wrap = styled.div`
   flex-direction: column;
 `;
 const AuthBox = styled.div`
-  width: 480px;
-  height: 150px;
+  width: 500px;
+  height: 130px;
   background-color: white;
   border-radius: 10px;
   border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
   cursor: pointer;
   span {
     font-size: 30px;
   }
   :hover {
+    border: 1px solid red;
     span {
       color: red;
     }
