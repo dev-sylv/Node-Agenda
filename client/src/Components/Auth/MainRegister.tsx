@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../Assets/relogo.webp";
 import house from "../Assets/sylvia7.jpg";
-// import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort } from "react-icons/bs";
 
 const MainRegister = () => {
   return (
@@ -15,7 +15,32 @@ const MainRegister = () => {
           <BgImage></BgImage>
           <Wrap>
             <h2>Sign Up</h2>
-            <AuthBox></AuthBox>
+            <AuthBox>
+              <BoxWrap>
+                <h3>Admin</h3>
+                <span>
+                  <BsArrowRightShort />
+                </span>
+              </BoxWrap>
+            </AuthBox>
+
+            <AuthBox>
+              <BoxWrap>
+                <h3>Agent</h3>
+                <span>
+                  <BsArrowRightShort />
+                </span>
+              </BoxWrap>
+            </AuthBox>
+
+            <AuthBox>
+              <BoxWrap>
+                <h3>User</h3>
+                <span>
+                  <BsArrowRightShort />
+                </span>
+              </BoxWrap>
+            </AuthBox>
           </Wrap>
         </MainAuth>
       </Container>
@@ -65,9 +90,30 @@ const Wrap = styled.div`
   height: 100%;
 `;
 const AuthBox = styled.div`
-  width: 450px;
-  height: 140px;
+  width: 480px;
+  height: 150px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  span {
+    font-size: 30px;
+  }
+  :hover {
+    span {
+      color: red;
+    }
+  }
+`;
+const BoxWrap = styled.div`
+  width: 400px;
+  height: 50px;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
