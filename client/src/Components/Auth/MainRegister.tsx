@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../Assets/house-removebg-preview.png";
 import bgauth from "../Assets/housebg-removebg-preview.png";
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const MainRegister = () => {
   return (
@@ -14,7 +15,7 @@ const MainRegister = () => {
         <MainAuth>
           <Wrap>
             <h2>Sign Up</h2>
-            <AuthBox>
+            <AuthBox to="/admin">
               <BoxWrap>
                 <h3>Admin</h3>
                 <span>
@@ -23,7 +24,7 @@ const MainRegister = () => {
               </BoxWrap>
             </AuthBox>
 
-            <AuthBox>
+            <AuthBox to="/agent">
               <BoxWrap>
                 <h3>Agent</h3>
                 <span>
@@ -32,7 +33,7 @@ const MainRegister = () => {
               </BoxWrap>
             </AuthBox>
 
-            <AuthBox>
+            <AuthBox to="/user">
               <BoxWrap>
                 <h3>User</h3>
                 <span>
@@ -56,24 +57,28 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  ::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #17181844;
-    position: absolute;
+  @media screen and (max-width: 768px) {
+    ::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: #171818da;
+      position: absolute;
+    }
   }
 `;
 const Logo = styled.div`
   width: 100%;
   height: 15vh;
   /* background-color: red; */
+  z-index: 2;
 `;
 const MyLogo = styled.img`
   width: 100px;
   height: 100px;
   object-fit: cover;
   margin: 20px;
+  z-index: 2;
   @media screen and (max-width: 500px) {
     width: 50px;
     height: 50px;
@@ -85,6 +90,7 @@ const MainAuth = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 `;
 const Wrap = styled.div`
   /* background-color: green; */
@@ -102,6 +108,7 @@ const Wrap = styled.div`
     font-size: 40px;
     margin-top: 0;
     font-weight: 600;
+    color: white;
     @media screen and (max-width: 768px) {
       margin-top: -50px;
     }
@@ -116,7 +123,7 @@ const Wrap = styled.div`
     }
   }
 `;
-const AuthBox = styled.div`
+const AuthBox = styled(Link)`
   width: 500px;
   height: 130px;
   background-color: white;
