@@ -55,6 +55,14 @@ const Container = styled.div`
   background-color: #00afff;
   display: flex;
   flex-direction: column;
+  position: relative;
+  ::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #17181844;
+    position: absolute;
+  }
 `;
 const Logo = styled.div`
   width: 100%;
@@ -79,7 +87,7 @@ const MainAuth = styled.div`
   justify-content: center;
 `;
 const Wrap = styled.div`
-  background-color: green;
+  /* background-color: green; */
   width: 100%;
   height: 100%;
   display: flex;
