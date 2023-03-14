@@ -53,14 +53,14 @@ export default MainRegister;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: #00000090;
+  /* background-color: #00000090; */
   display: flex;
   flex-direction: column;
 `;
 const Logo = styled.div`
   width: 100%;
   height: 15vh;
-  background-color: red;
+  /* background-color: red; */
 `;
 const MyLogo = styled.img`
   width: 100px;
@@ -76,16 +76,16 @@ const MainAuth = styled.div`
   justify-content: center;
 `;
 const BgImage = styled.div`
-  background-color: cyan;
+  /* background-color: cyan; */
   width: 30%;
   height: 100%;
   background-image: url(${house});
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  /* background-size: 15%; */
+  background-position: right -7.5% top -1%;
 `;
 const Wrap = styled.div`
-  background-color: green;
+  /* background-color: green; */
   width: 40%;
   height: 100%;
   display: flex;
@@ -116,7 +116,7 @@ const AuthBox = styled.div`
 const BoxWrap = styled.div`
   width: 400px;
   height: 50px;
-  background-color: yellow;
+  /* background-color: yellow; */
   display: flex;
   align-items: center;
   justify-content: space-between;
