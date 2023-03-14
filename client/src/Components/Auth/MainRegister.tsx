@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../Assets/relogo.webp";
 import house from "../Assets/sylvia7.jpg";
+// import { BsArrowRightShort } from "react-icons/bs";
 
 const MainRegister = () => {
   return (
@@ -64,8 +65,8 @@ const Wrap = styled.div`
   height: 100%;
 `;
 const AuthBox = styled.div`
-  width: 300px;
-  height: 100px;
+  width: 450px;
+  height: 140px;
   background-color: white;
   border-radius: 5px;
   border: 1px solid black;
