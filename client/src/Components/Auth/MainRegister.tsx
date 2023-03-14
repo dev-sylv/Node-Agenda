@@ -65,7 +65,11 @@ const MyLogo = styled.img`
   width: 100px;
   height: 100px;
   object-fit: cover;
-  margin-left: 20px;
+  margin: 20px;
+  @media screen and (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const MainAuth = styled.div`
   width: 100%;
@@ -75,7 +79,7 @@ const MainAuth = styled.div`
   justify-content: center;
 `;
 const Wrap = styled.div`
-  /* background-color: green; */
+  background-color: green;
   width: 100%;
   height: 100%;
   display: flex;
@@ -86,6 +90,23 @@ const Wrap = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left 100% top -55%;
+  h2 {
+    font-size: 40px;
+    margin-top: 0;
+    font-weight: 600;
+    @media screen and (max-width: 768px) {
+      margin-top: -50px;
+    }
+    @media screen and (max-width: 500px) {
+      margin-top: -100px;
+    }
+    @media screen and (max-width: 500px) {
+      margin-top: -140px;
+    }
+    @media screen and (max-width: 320px) {
+      margin-top: -150px;
+    }
+  }
 `;
 const AuthBox = styled.div`
   width: 500px;
@@ -96,7 +117,7 @@ const AuthBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 25px;
   cursor: pointer;
   span {
     font-size: 30px;
@@ -107,6 +128,21 @@ const AuthBox = styled.div`
       color: red;
     }
   }
+  @media screen and (max-width: 768px) {
+    width: 700px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 400px;
+    height: 110px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 350px;
+    height: 100px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 300px;
+    height: 100px;
+  }
 `;
 const BoxWrap = styled.div`
   width: 400px;
@@ -115,4 +151,19 @@ const BoxWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    width: 600px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 300px;
+    height: 40px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 250px;
+    height: 30px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 200px;
+    height: 30px;
+  }
 `;
