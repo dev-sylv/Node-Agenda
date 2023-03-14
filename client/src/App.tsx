@@ -1,10 +1,10 @@
 import React from "react";
-import MainRegister from "./Components/Auth/MainRegister";
+import AllRoutes from "./Components/AllRoutes/AllRoutes";
 
 const App = () => {
   return (
     <div>
-      <MainRegister />
+      <AllRoutes />
     </div>
   );
 };
