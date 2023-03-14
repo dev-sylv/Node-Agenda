@@ -134,6 +134,8 @@ const AuthBox = styled(Link)`
   justify-content: center;
   margin-top: 25px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
   span {
     font-size: 30px;
   }
