@@ -1,7 +1,5 @@
 const express = require("express")
 
-// const cors = require("cors");
-// const { default: agenda } = require("./Config/db");
 const  router  = require("./Routes/userroutes");
 
 const {DBconnect} = require("./Config/db");

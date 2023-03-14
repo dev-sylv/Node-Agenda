@@ -16,7 +16,7 @@ const userModels = require("../Models/usermodels")
 
 
 // Welcome mail for all users:
-const  WelcomeMail = async(req, res) =>{
+const  WelcomeEMail = async(req, res) =>{
 
  try {
 
@@ -65,5 +65,5 @@ const  WelcomeMail = async(req, res) =>{
 
 }
 
-module.exports = WelcomeMail
+module.exports = WelcomeEMail
 // Register a user and send them welcome emails:

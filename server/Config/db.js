@@ -11,15 +11,11 @@ const agenda = new Agenda({
     useUnifiedTopology: true
 });
 
-// export default agenda
-
-// // export const agenda = new Agenda({db: { address: agendastring }})
-
-// // agenda.on("ready", () =>{
-// //     console.log("Agenda is connected to db")
-// // }).on("error", () =>{
-// //     console.log("Agenda connection error")
-// })
+agenda.on("ready", () =>{
+    console.log("Agenda is connected to db")
+ }).on("error", () =>{
+     console.log("Agenda connection error")
+ })
 
 const DBconnect = async() =>{
     try {
