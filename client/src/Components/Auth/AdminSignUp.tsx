@@ -11,33 +11,10 @@ const AdminSignUp = () => {
           <Form>
             <Wrap>
               <Right>
-                <Input
-                  type="text"
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                  placeholder="Name"
-                />
-                <Input
-                  type="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  placeholder="Email"
-                />
-                <Input
-                  type="text"
-                  onChange={(e) => {
-                    setTitle(e.target.value);
-                  }}
-                  placeholder="Subject"
-                />
-                <Box
-                  onChange={(e) => {
-                    setSubject(e.target.value);
-                  }}
-                  placeholder="Message"
-                />
+                <Input type="text" placeholder="Name" />
+                <Input type="email" placeholder="Email" />
+                <Input type="text" placeholder="Subject" />
+                <Box placeholder="Message" />
                 <Button type="submit">Submit</Button>
               </Right>
             </Wrap>
@@ -97,4 +74,70 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200%;
+`;
+const Button = styled.button`
+  height: 50px;
+  width: 150px;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 350ms;
+  font-weight: bold;
+  margin-top: 15px;
+  color: white;
+  :hover {
+    transform: scale(0.9);
+    background-color: #f5f5f5;
+    color: purple;
+    border: 1px solid purple;
+  }
+`;
+const Box = styled.textarea`
+  /* width: 200px; */
+  display: flex;
+  padding-left: 15px;
+  padding-top: 20px;
+  height: 90px;
+  border: 1px solid #ced4da;
+  outline: none;
+  resize: none;
+  ::placeholder {
+    font-size: 17px;
+  }
+`;
+const Input = styled.input`
+  /* width: 100%; */
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border: 1px solid #ced4da;
+  margin-bottom: 10px;
+  ::placeholder {
+    font-size: 17px;
+  }
+`;
+const Right = styled.form`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+    justify-content: center; */
+  /* background-color: red; */
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 15px;
+  }
+`;
+const Up = styled.div`
+  h2 {
+    font-size: 30px;
+    color: #444444;
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
 `;
