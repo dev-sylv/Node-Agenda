@@ -74,20 +74,24 @@ const MainAuth = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-image: url(${house});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain; */
 `;
 const BgImage = styled.div`
   background-color: cyan;
   width: 30%;
   height: 100%;
+  background-image: url(${house});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 `;
 const Wrap = styled.div`
   background-color: green;
   width: 40%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 const AuthBox = styled.div`
   width: 480px;
