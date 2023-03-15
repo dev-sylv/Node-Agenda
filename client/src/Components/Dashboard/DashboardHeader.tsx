@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DashboardSidebar from "./DashboardSidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,6 +9,18 @@ import { RxEnvelopeClosed } from "react-icons/rx";
 import face from "../Assets/face15.jpg";
 
 const DashboardHeader = () => {
+  const [showProfile, setShowProfile] = useState(false);
+  const [minimiseDashboard, setMinimiseDashboard] = useState(true);
+
+  // For the profile to pop up
+  const ToggleProfile = () => {
+    setShowProfile(!showProfile);
+  };
+
+  // To minimise the dashboard
+  const ToggleDashboard = () => {
+    setMinimiseDashboard(!minimiseDashboard);
+  };
   return (
     <div>
       <Header>
@@ -16,7 +28,7 @@ const DashboardHeader = () => {
           <Logo>JES ESTATE</Logo>
 
           <SearchPart>
-            <Toggle>
+            <Toggle onClick={ToggleDashboard}>
               <GiHamburgerMenu />
             </Toggle>
             <Search>
@@ -48,7 +60,7 @@ const DashboardHeader = () => {
               </span>
             </Notification>
 
-            <Profile>
+            <Profile onClick={ToggleProfile}>
               <Face>
                 <img src={face} alt="" />
               </Face>
@@ -59,6 +71,8 @@ const DashboardHeader = () => {
                 </span>
               </Name>
             </Profile>
+
+            {showProfile ? <ProfileBox></ProfileBox> : null}
           </ProfilePart>
         </Wrapper>
       </Header>
@@ -218,6 +232,18 @@ const Profile = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+  position: relative;
+`;
+const ProfileBox = styled.div`
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  top: 60px;
+  right: 45px;
+  border-radius: 10px;
+  background-color: #191c24;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 const Face = styled.div`
   width: 50px;
