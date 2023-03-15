@@ -6,7 +6,9 @@ import { HiOutlinePlusSm } from "react-icons/hi";
 import { IoNotificationsOutline, IoGridSharp } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RxEnvelopeClosed } from "react-icons/rx";
+import { GoPrimitiveDot } from "react-icons/go";
 import face from "../Assets/face15.jpg";
+import MinimizedDashboard from "./MinimizedDashboard";
 
 const DashboardHeader = () => {
   const [showProfile, setShowProfile] = useState(false);
@@ -53,10 +55,12 @@ const DashboardHeader = () => {
               <div>
                 <span>
                   <RxEnvelopeClosed />
+                  {/* <GoPrimitiveDot /> */}
                 </span>
               </div>
               <span>
                 <IoNotificationsOutline />
+                {/* <GoPrimitiveDot /> */}
               </span>
             </Notification>
 
@@ -77,7 +81,7 @@ const DashboardHeader = () => {
         </Wrapper>
       </Header>
       <SideBar>
-        <DashboardSidebar />
+        {minimiseDashboard ? <DashboardSidebar /> : <MinimizedDashboard />}
       </SideBar>
     </div>
   );
