@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import DashboardSidebar from "./DashboardSidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { HiOutlinePlusSm } from "react-icons/hi";
 
 const DashboardHeader = () => {
   return (
@@ -19,7 +20,15 @@ const DashboardHeader = () => {
             </Search>
           </SearchPart>
 
-          <ProfilePart></ProfilePart>
+          <ProfilePart>
+            <NewProject>
+              <Btn>
+                <HiOutlinePlusSm /> Post New House
+              </Btn>
+            </NewProject>
+            <Notification></Notification>
+            <Profile></Profile>
+          </ProfilePart>
         </Wrapper>
       </Header>
       <SideBar>
@@ -106,5 +115,25 @@ const ProfilePart = styled.div`
   width: 40%;
   height: 100%;
   background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+const NewProject = styled.div`
+  width: 35%;
+  height: 100%;
+  background-color: red;
+`;
+const Btn = styled.div``;
+const Notification = styled.div`
+  width: 25%;
+  height: 100%;
+  background-color: green;
+`;
+const Profile = styled.div`
+  width: 40%;
+  height: 100%;
+  background-color: aqua;
+`;
+
 const SideBar = styled.div``;
