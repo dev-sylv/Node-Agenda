@@ -15,7 +15,7 @@ const DashboardHeader = () => {
               <GiHamburgerMenu />
             </Toggle>
             <Search>
-              <Input />
+              <Input placeholder="Search Agents..." />
             </Search>
           </SearchPart>
 
@@ -43,7 +43,7 @@ const Header = styled.div`
 const Wrapper = styled.div`
   width: 95%;
   height: 50px;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
 const Logo = styled.div`
   width: 12%;
   height: 100%;
-  background-color: blue;
+  /* background-color: blue; */
   font-size: 25px;
   font-weight: bold;
   display: flex;
@@ -63,15 +63,15 @@ const Logo = styled.div`
 const SearchPart = styled.div`
   width: 30%;
   height: 100%;
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 const Toggle = styled.div`
-  width: 10%;
+  width: 5%;
   height: 100%;
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -79,11 +79,28 @@ const Toggle = styled.div`
   color: #4f5373;
 `;
 const Search = styled.div`
-  width: 80%;
+  width: 90%;
   height: 100%;
-  background-color: orange;
+  /* background-color: orange; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-const Input = styled.input``;
+const Input = styled.input`
+  width: 100%;
+  height: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid #4f537388;
+  border-radius: 5px;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  ::placeholder {
+    color: #4f5373;
+  }
+`;
 const ProfilePart = styled.div`
   width: 40%;
   height: 100%;
