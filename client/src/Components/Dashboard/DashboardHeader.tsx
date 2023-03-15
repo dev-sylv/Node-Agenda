@@ -3,6 +3,8 @@ import styled from "styled-components";
 import DashboardSidebar from "./DashboardSidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlinePlusSm } from "react-icons/hi";
+import { IoNotificationsOutline, IoGridSharp } from "react-icons/io5";
+import { RxEnvelopeClosed } from "react-icons/rx";
 
 const DashboardHeader = () => {
   return (
@@ -23,11 +25,31 @@ const DashboardHeader = () => {
           <ProfilePart>
             <NewProject>
               <Btn>
-                <HiOutlinePlusSm /> Post New House
+                <span>
+                  <HiOutlinePlusSm />
+                </span>{" "}
+                Post New House
               </Btn>
             </NewProject>
-            <Notification></Notification>
-            <Profile></Profile>
+
+            <Notification>
+              <span>
+                <IoGridSharp />
+              </span>
+              <div>
+                <span>
+                  <RxEnvelopeClosed />
+                </span>
+              </div>
+              <span>
+                <IoNotificationsOutline />
+              </span>
+            </Notification>
+
+            <Profile>
+              <Face></Face>
+              <Name></Name>
+            </Profile>
           </ProfilePart>
         </Wrapper>
       </Header>
@@ -123,17 +145,71 @@ const NewProject = styled.div`
   width: 35%;
   height: 100%;
   background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-const Btn = styled.div``;
+const Btn = styled.div`
+  width: 90%;
+  height: 70%;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 350ms;
+  :hover {
+    background-color: #00ac4a;
+  }
+  span {
+    font-weight: bolder;
+    font-size: 16px;
+    margin-right: 5px;
+    height: 20px;
+    width: 15px;
+  }
+`;
 const Notification = styled.div`
   width: 25%;
   height: 100%;
   background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    margin-right: 12px;
+    font-size: 20px;
+    /* background-color: red; */
+    cursor: pointer;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 12px;
+    font-size: 20px;
+    /* background-color: red; */
+    height: 40px;
+    border-left: 1px solid #4f5373;
+    border-right: 1px solid #4f5373;
+    span {
+      margin-left: 12px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+  }
 `;
 const Profile = styled.div`
   width: 40%;
   height: 100%;
   background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
+const Face = styled.div``;
+const Name = styled.div``;
 
 const SideBar = styled.div``;
