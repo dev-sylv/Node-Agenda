@@ -4,91 +4,99 @@ import hold1 from "../Assets/img_3.jpg";
 import hold2 from "../Assets/img_4.jpg";
 import hold3 from "../Assets/house3.jpg";
 import hold4 from "../Assets/otherpages.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
   const settings = {
     dots: true,
     fade: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    cssEase: "linear",
+    autoplaySpeed: 5000,
   };
 
   return (
     <>
       <Body>
-        <Contain>
-          <Left>
-            <Buy>Buy, Sell and Rent Properties</Buy>
+        <Slider {...settings}>
+          <Contain>
+            <Left>
+              <Buy>Buy, Sell and Rent Properties</Buy>
 
-            <Need>
-              Need a perfect place to live right now? Here's the best offer for
-              you! Amazing house with the most comfort layout is fully equipped
-              with everything needed.
-            </Need>
+              <Need>
+                Need a perfect place to live right now? Here's the best offer
+                for you! Amazing house with the most comfort layout is fully
+                equipped with everything needed.
+              </Need>
 
-            <Start>Get Started</Start>
-          </Left>
+              <Start>Get Started</Start>
+            </Left>
 
-          <Right>
-            <Hold1>
-              <Image
-                style={{
-                  width: "150%",
-                  height: "165%",
-                  transform: "rotate(315deg)",
-                  position: "absolute",
-                  top: "-40px",
-                  left: "-170px",
-                }}
-                src={hold1}
-              />
-            </Hold1>
+            <Right>
+              <Hold1>
+                <Image
+                  style={{
+                    width: "150%",
+                    height: "165%",
+                    transform: "rotate(315deg)",
+                    position: "absolute",
+                    top: "-40px",
+                    left: "-170px",
+                  }}
+                  src={hold1}
+                />
+              </Hold1>
 
-            <Hold2>
-              <Image
-                style={{
-                  width: "150%",
-                  height: "165%",
-                  transform: "rotate(315deg)",
-                  position: "absolute",
-                  top: "-60px",
-                  left: "-50px",
-                }}
-                src={hold2}
-              />
-            </Hold2>
+              <Hold2>
+                <Image
+                  style={{
+                    width: "150%",
+                    height: "165%",
+                    transform: "rotate(315deg)",
+                    position: "absolute",
+                    top: "-60px",
+                    left: "-50px",
+                  }}
+                  src={hold2}
+                />
+              </Hold2>
 
-            <Hold3>
-              <Image
-                style={{
-                  width: "150%",
-                  height: "165%",
-                  transform: "rotate(315deg)",
-                  position: "absolute",
-                  top: "-40px",
-                  left: "-60px",
-                }}
-                src={hold3}
-              />
-            </Hold3>
+              <Hold3>
+                <Image
+                  style={{
+                    width: "150%",
+                    height: "165%",
+                    transform: "rotate(315deg)",
+                    position: "absolute",
+                    top: "-40px",
+                    left: "-60px",
+                  }}
+                  src={hold3}
+                />
+              </Hold3>
 
-            <Hold4>
-              <Image
-                style={{
-                  width: "150%",
-                  height: "165%",
-                  transform: "rotate(315deg)",
-                  position: "absolute",
-                  top: "15px",
-                  left: "-140px",
-                }}
-                src={hold4}
-              />
-            </Hold4>
-          </Right>
-        </Contain>
+              <Hold4>
+                <Image
+                  style={{
+                    width: "150%",
+                    height: "165%",
+                    transform: "rotate(315deg)",
+                    position: "absolute",
+                    top: "15px",
+                    left: "-140px",
+                  }}
+                  src={hold4}
+                />
+              </Hold4>
+            </Right>
+          </Contain>
+        </Slider>
       </Body>
     </>
   );
