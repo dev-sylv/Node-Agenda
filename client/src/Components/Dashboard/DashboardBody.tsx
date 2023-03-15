@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const DashboardBody = () => {
+const DashBoardBody = () => {
   return (
-    <div>
-      <Container>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure explicabo
-        dicta soluta. Provident maxime iure, amet corporis natus repudiandae
-        esse dolorum animi reiciendis molestiae! Optio debitis quasi earum
-        reprehenderit nisi?
-      </Container>
-    </div>
+    <Container>
+      <Content>Dashboard home</Content>
+    </Container>
   );
 };
 
-export default DashboardBody;
+export default DashBoardBody;
+
+const Content = styled.div`
+  margin-top: 70px;
+  margin-left: 20px;
+`;
 
 const Container = styled.div`
-  background-color: #000000;
-  color: white;
   width: calc(100% - 250px);
-  height: calc(100vh - 70px);
+  min-height: 100vh;
+  background-color: #f1f1f1;
 `;

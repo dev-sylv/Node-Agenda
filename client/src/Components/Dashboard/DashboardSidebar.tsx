@@ -16,4 +16,5 @@ const Container = styled.div`
   height: 100vh;
   background-color: #191c24;
   position: fixed;
+  color: white;
 `;
