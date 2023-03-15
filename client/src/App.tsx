@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div>
       <AllRoutes />
-      <DashboardRoutes />
+      {/* <DashboardRoutes /> */}
     </div>
   );
 };
