@@ -78,7 +78,7 @@ const Image = styled.div`
 const Button = styled.button`
   height: 50px;
   width: 150px;
-  background-color: purple;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +91,7 @@ const Button = styled.button`
   :hover {
     transform: scale(0.9);
     background-color: #f5f5f5;
-    color: purple;
+    color: blue;
     border: 1px solid purple;
   }
 `;
@@ -121,23 +121,14 @@ const Input = styled.input`
   }
 `;
 const Right = styled.form`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* align-items: center;
     justify-content: center; */
-  /* background-color: red; */
+  background-color: red;
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-top: 15px;
-  }
-`;
-const Up = styled.div`
-  h2 {
-    font-size: 30px;
-    color: #444444;
-    @media screen and (max-width: 768px) {
-      font-size: 30px;
-    }
   }
 `;
