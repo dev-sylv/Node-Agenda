@@ -97,6 +97,7 @@ const Input = styled.input`
   padding-left: 20px;
   font-size: 15px;
   font-weight: 500;
+  color: #4f5373;
   ::placeholder {
     color: #4f5373;
   }
