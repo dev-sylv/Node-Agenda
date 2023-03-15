@@ -4,7 +4,9 @@ import DashboardSidebar from "./DashboardSidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { IoNotificationsOutline, IoGridSharp } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { RxEnvelopeClosed } from "react-icons/rx";
+import face from "../Assets/face15.jpg";
 
 const DashboardHeader = () => {
   return (
@@ -47,8 +49,15 @@ const DashboardHeader = () => {
             </Notification>
 
             <Profile>
-              <Face></Face>
-              <Name></Name>
+              <Face>
+                <img src={face} alt="" />
+              </Face>
+              <Name>
+                Nic Sylvia{" "}
+                <span>
+                  <IoMdArrowDropdown />
+                </span>
+              </Name>
             </Profile>
           </ProfilePart>
         </Wrapper>
@@ -136,7 +145,7 @@ const Input = styled.input`
 const ProfilePart = styled.div`
   width: 40%;
   height: 100%;
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +153,7 @@ const ProfilePart = styled.div`
 const NewProject = styled.div`
   width: 35%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,6 +162,7 @@ const Btn = styled.div`
   width: 90%;
   height: 70%;
   background-color: green;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +184,7 @@ const Btn = styled.div`
 const Notification = styled.div`
   width: 25%;
   height: 100%;
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,14 +212,43 @@ const Notification = styled.div`
   }
 `;
 const Profile = styled.div`
-  width: 40%;
+  width: 35%;
   height: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
   display: flex;
   align-items: center;
   justify-content: space-around;
 `;
-const Face = styled.div``;
-const Name = styled.div``;
+const Face = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* background-color: orange; */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+`;
+const Name = styled.div`
+  width: 55%;
+  height: 70%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  span {
+    color: #4f5373;
+    font-size: 25px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 const SideBar = styled.div``;
