@@ -24,6 +24,22 @@ const  WelcomeEMail = async(req, res) =>{
             password
         })
 
+        const token = crypto.randomBytes(16).toString("hex");
+
+        const VerificationLink = `http://localhost:4000/api/user/${user._id}/verify/${token}`;
+
+        const EmailMessage = {
+            from : "sannifortune11@gmail.com",
+            to: email,
+            subject : "Email Verification from Real estate Plateform",
+            html: `
+            <p>Hello, ${name}</p>
+        <p>Confirm your account by clicking the link below</p>
+        <p><a href=${VerificationLink}>Click here to continue</a></p>
+        <p>You are receiving this mail because you signed up on our platform, <b>Real estate Plateform</b>. Ignore this message if you did not take this action.</p>
+        `
+        }
+
         return res.status(201).json({
             message: "Successfully created User",
             data: user
