@@ -44,7 +44,7 @@ const WelcomeMail = async(req, res) => {
     });
 
     // Schedule a job to send the welcome email in 1 minute
-    const sendEmailJob = await agenda.schedule('in 2 minutes', 'send welcome email', {
+    const sendEmailJob = await agenda.schedule('in 1 minute', 'send welcome email', {
       name: user.name,
       email: user.email
     });

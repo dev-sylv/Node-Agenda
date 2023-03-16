@@ -1,4 +1,4 @@
-
+const crypto = require("crypto");
 
 const transporter = require("../Config/mailer")
 
@@ -29,7 +29,7 @@ const  WelcomeEMail = async(req, res) =>{
         const VerificationLink = `http://localhost:4000/api/user/${user._id}/verify/${token}`;
 
         const EmailMessage = {
-            from : "sannifortune11@gmail.com",
+            from : "nicsylvia15f@gmail.com",
             to: email,
             subject : "Email Verification from Real estate Plateform",
             html: `
@@ -40,21 +40,16 @@ const  WelcomeEMail = async(req, res) =>{
         `
         }
 
-        await transporter.sendMail(EmailMessage).then((res) =>{
-            return res.status(201).json({
+        await transporter.sendMail(EmailMessage);
+
+        return res.status(201).json({
                 message: "View your mail/spam folder to verify your account",
                 data: res
-            })
-        }).catch((err) =>{
-            return res.status(500).json({
-                message: "Couldn't go through",
-                data: err.message
-            })
         })
     }
  } catch (error) {
         return res.status(400).json({
-            message: "An error occured",
+            message: "An error occured, couldn't go through",
             data: error.message
         })
  }
