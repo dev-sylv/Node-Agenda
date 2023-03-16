@@ -1,20 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 
 const RegisterForm = () => {
-  return <div>
-    <Right>
-                <Input type="text" placeholder="Name" />
-                <Input type="email" placeholder="Email" />
-                <Input type="text" placeholder="Subject" />
-                <Box placeholder="Message" />
-                <Button type="submit">Submit</Button>
-              </Right>
-  </div>;
+  return (
+    <div>
+      <Right>
+        <Input type="text" placeholder="Name" />
+        <Input type="email" placeholder="Email" />
+        <Input type="text" placeholder="Password" />
+        <Box placeholder="Message" />
+        <Button type="submit">Submit</Button>
+      </Right>
+    </div>
+  );
 };
 
 export default RegisterForm;
 
-onst Button = styled.button`
+const Button = styled.button`
   height: 50px;
   width: 150px;
   background-color: black;
