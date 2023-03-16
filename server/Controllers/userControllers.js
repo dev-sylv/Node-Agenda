@@ -40,14 +40,18 @@ const  WelcomeEMail = async(req, res) =>{
         `
         }
 
-        return res.status(201).json({
-            message: "Successfully created User",
-            data: user
+        await transporter.sendMail(EmailMessage).then((res) =>{
+            return res.status(201).json({
+                message: "View your mail/spam folder to verify your account",
+                data: res
+            })
+        }).catch((err) =>{
+            return res.status(500).json({
+                message: "Couldn't go through",
+                data: err.message
+            })
         })
     }
-   
-    
-   
  } catch (error) {
         return res.status(400).json({
             message: "An error occured",
