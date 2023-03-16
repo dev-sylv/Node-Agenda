@@ -5,8 +5,8 @@ import DashboardRoutes from "./Components/Dashboard/DashboardRoutes";
 const App = () => {
   return (
     <div>
-      <AllRoutes />
-      {/* <DashboardRoutes /> */}
+      {/* <AllRoutes /> */}
+      <DashboardRoutes />
     </div>
   );
 };

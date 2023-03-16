@@ -24,79 +24,109 @@ const Hero = () => {
   return (
     <>
       <Body>
-        <Slider {...settings}>
-          <Contain>
-            <Left>
-              <Buy>Buy, Sell and Rent Properties</Buy>
+        {/* <Slider {...settings}> */}
+        <Contain>
+          <Left>
+            <div>
+              <Slider {...settings}>
+                <div>
+                  <Buy>Buy, Sell and Rent Properties</Buy>
 
-              <Need>
-                Need a perfect place to live right now? Here's the best offer
-                for you! Amazing house with the most comfort layout is fully
-                equipped with everything needed.
-              </Need>
+                  <Need>
+                    Need a perfect place to live right now? Here's the best
+                    offer for you! Amazing house with the most comfort layout is
+                    fully equipped with everything needed.
+                  </Need>
 
-              <Start>Get Started</Start>
-            </Left>
+                  <Start>Get Started</Start>
+                </div>
 
-            <Right>
-              <Hold1>
-                <Image
-                  style={{
-                    width: "150%",
-                    height: "165%",
-                    transform: "rotate(315deg)",
-                    position: "absolute",
-                    top: "-40px",
-                    left: "-170px",
-                  }}
-                  src={hold1}
-                />
-              </Hold1>
+                <div>
+                  <Buy>Buy, me</Buy>
 
-              <Hold2>
-                <Image
-                  style={{
-                    width: "150%",
-                    height: "165%",
-                    transform: "rotate(315deg)",
-                    position: "absolute",
-                    top: "-60px",
-                    left: "-50px",
-                  }}
-                  src={hold2}
-                />
-              </Hold2>
+                  <Need>
+                    Need a perfect place to live right now? Here's the best
+                    offer for you! Amazing house with the most comfort layout is
+                    fully equipped with everything needed.
+                  </Need>
 
-              <Hold3>
-                <Image
-                  style={{
-                    width: "150%",
-                    height: "165%",
-                    transform: "rotate(315deg)",
-                    position: "absolute",
-                    top: "-40px",
-                    left: "-60px",
-                  }}
-                  src={hold3}
-                />
-              </Hold3>
+                  <Start>Get Started</Start>
+                </div>
 
-              <Hold4>
-                <Image
-                  style={{
-                    width: "150%",
-                    height: "165%",
-                    transform: "rotate(315deg)",
-                    position: "absolute",
-                    top: "15px",
-                    left: "-140px",
-                  }}
-                  src={hold4}
-                />
-              </Hold4>
-            </Right>
-          </Contain>
-        </Slider>
+                <div>
+                  <Buy>Buy, sylvias</Buy>
+
+                  <Need>
+                    Need a perfect place to live right now? Here's the best
+                    offer for you! Amazing house with the most comfort layout is
+                    fully equipped with everything needed.
+                  </Need>
+
+                  <Start>Get Started</Start>
+                </div>
+              </Slider>
+            </div>
+          </Left>
+
+          <Right>
+            <Hold1>
+              <Image
+                style={{
+                  width: "150%",
+                  height: "165%",
+                  transform: "rotate(315deg)",
+                  position: "absolute",
+                  top: "-40px",
+                  left: "-170px",
+                }}
+                src={hold1}
+              />
+            </Hold1>
+
+            <Hold2>
+              <Image
+                style={{
+                  width: "150%",
+                  height: "165%",
+                  transform: "rotate(315deg)",
+                  position: "absolute",
+                  top: "-60px",
+                  left: "-50px",
+                }}
+                src={hold2}
+              />
+            </Hold2>
+
+            <Hold3>
+              <Image
+                style={{
+                  width: "150%",
+                  height: "165%",
+                  transform: "rotate(315deg)",
+                  position: "absolute",
+                  top: "-40px",
+                  left: "-60px",
+                }}
+                src={hold3}
+              />
+            </Hold3>
+
+            <Hold4>
+              <Image
+                style={{
+                  width: "150%",
+                  height: "165%",
+                  transform: "rotate(315deg)",
+                  position: "absolute",
+                  top: "15px",
+                  left: "-140px",
+                }}
+                src={hold4}
+              />
+            </Hold4>
+          </Right>
+        </Contain>
+        {/* </Slider> */}
       </Body>
     </>
   );
@@ -263,6 +293,7 @@ const Contain = styled.div`
   // flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* background-color: blue; */
 `;
 
 const Body = styled.div`
@@ -272,6 +303,7 @@ const Body = styled.div`
   background-position: cover;
   display: flex;
   justify-content: center;
-  align-itemjs: center;
+  align-items: center;
   overflow: hidden;
+  /* background-color: red; */
 `;
