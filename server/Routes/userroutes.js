@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.route("/register").post(WelcomeEMail)
 
-router.route("/testing").post(WelcomeMail)
+// router.route("/testing").post(WelcomeMail)
 
 module.exports = router

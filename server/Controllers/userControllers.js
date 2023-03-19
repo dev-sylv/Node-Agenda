@@ -14,9 +14,10 @@ const  WelcomeEMail = async(req, res) =>{
     const Findemail = await userModels.findOne({email});
 
     if (Findemail) {
-        res.status(409).json({
-            message: "User with email already exists",
-        })
+        console.log("hi")
+        // res.status(409).json({
+        //     message: "User with email already exists",
+        // })
     }else{
         const user = await userModels.create({
             name,
@@ -29,7 +30,7 @@ const  WelcomeEMail = async(req, res) =>{
         const VerificationLink = `http://localhost:4000/api/user/${user._id}/verify/${token}`;
 
         const EmailMessage = {
-            from : "nicsylvia15f@gmail.com",
+            from : "mypitchvest@outlook.com",
             to: email,
             subject : "Email Verification from Real estate Plateform",
             html: `
@@ -49,7 +50,7 @@ const  WelcomeEMail = async(req, res) =>{
     }
  } catch (error) {
         return res.status(400).json({
-            message: "An error occured, couldn't go through",
+            message: "An error occured, couldn't go through", error,
             data: error.message
         })
  }
